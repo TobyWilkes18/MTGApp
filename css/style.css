@@ -3,7 +3,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("assets/backgroundAssets/3.jpg");
+  background-image: url("../assets/backgroundAssets/3.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
