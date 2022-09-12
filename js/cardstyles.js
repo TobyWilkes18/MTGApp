@@ -1,11 +1,3 @@
-/*
-**
-** A pen by Alex Buffet
-** https://alexandrebuffet.fr
-**
-**
-*/
-
 ;(function ( $ ) {
     $.fn.tilt = function() {
         var perspective = '1000px',

@@ -4,88 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MTGCardSearch Test</title>
-    <link rel="stylesheet" href="css/style.css">
-    <!--<script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 <body>
-    <input type="search" id="userInput" name="cardNameInput">	
-    <button class="btn-search" id="buttonSearch">Search</button>
-    <hr/>
-    <section>
+    <div id="searchDiv" class="text-bg-primary p-3 container-sm grid text-center rounded">
+        <div class="g-col-8">
+            <input type="search" id="userInput" name="cardNameInput" class="form-control-sm">	
+            <button class="btn-search btn btn-sm btn-outline-light" id="buttonSearch">Search</button> 
+        </div>
+    </div>
+
+    <!-- Card Info Section-->
+    <div id="cardDiv" class="container-sm g-col-12">
         <div class="card rounded">
             <div class="card__overlay">
             </div>
-                <div class="card__heading">
-                    <img id="cardImg" src="" />
-                </div>
+            <div class="card__image">
+                <img id="cardImg" src="" alt=""/> 
             </div>
-    </section>
+            <div class="card__heading">
+                <!--<span class="small">Hover</span>-->
+            </div>
+        </div>
+    </div>
 
-    <section>
-        <div id="mainInfo">
-            <p id="cardName"></p>
-            <p id="manaCost"></p>
+    <div class="container grid text-center rounded bg-light bg-gradient" id="mainInfo">
+        <div>
+            <p class="display-6" id="cardName"></p>
+            <ul class="container list-group list-group-horizontal translate-middle" id="manaCost">
+            </ul>
             <p id="cardType"></p>
         </div>
-    </section>
-    
-
-<!--
-        <div id="mainInfo, card rounded">
-        <div class="card__overlay">
+        <div>
+            <span class="badge text-bg-success">Legal</span>
+            <span class="badge text-bg-danger">Banned</span>
         </div>
-        <img id="" src="" />
-        <p id="cardName"></p>
-        <p id="manaCost"></p>
-        <p id="cardType"></p>
     </div>
-    -->
-
-<!--
-    <section>
-        <div id="superman" class="card rounded">
-          <div class="card__overlay">
-          </div>
-          <!-- <div class="card__image">
-            <img src="" alt=""/> 
-          </div>
-              <div class="card__heading">
-            <span class="small">Hover</span>
-            <img src="https://i.imgur.com/70CEYMd.jpeg" />
-                  <h2>Superman</h2>
-              </div>
-        </div>
-        <div class="card rounded">
-          <div class="card__overlay">
-          </div>
-              <div class="card__heading">
-                  <img id="cardImg" src="" />
-              </div>
-        </div>
-
-        <div id="wonderwoman" class="card rounded">
-          <div class="card__overlay">
-          </div>
-              <div class="card__heading">
-                <img src="http://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png" />
-                  <h2>Wonder Woman</h2>
-              </div>
-        </div>
-
-        <div id="aquaman" class="card rounded">
-          <div class="card__overlay">
-          </div>
-              <div class="card__heading">
-            <span class="small">Hover</span>
-                  <h2>Aquaman</h2>
-              </div>
-        </div>
-      </section>
-    -->
+   
     
-    <script type="text/javascript" src="js/cardSearch.js"></script>
-    <script type="text/javascript" src="js/cardstyles.js"></script>
+    
+    <script type="text/javascript" src="../js/cardSearch.js"></script>
+    <script type="text/javascript" src="../js/cardstyles.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     
 
 </body>

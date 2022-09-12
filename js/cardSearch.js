@@ -1,3 +1,5 @@
+
+/* Ajax Call Prototype */
 function searchCard(url, methodType, callback){
     $.ajax({
        url : url,
@@ -13,8 +15,6 @@ function searchCard(url, methodType, callback){
     });
    }
 
-
-
    document.getElementById("buttonSearch").addEventListener("click", function(){
         var cardNameSearch = document.getElementById("userInput").value;
         console.log(cardNameSearch);
@@ -26,23 +26,17 @@ function searchCard(url, methodType, callback){
        var searchURL = root+cardSearchParam+cardNameSearch;
        console.log(searchURL);
 
+/* Post for data return on input param (Name Search) */
     searchCard(searchURL, "GET", function(respJson){
         var cardName = respJson.data[0].name;
         var manaCost = respJson.data[0].mana_cost;
         var cardType = respJson.data[0].type_line;
         var cardImg = respJson.data[0].image_uris.normal;
 
-        console.log(manaCost);
-
+/* Cut and shut initial array */
         const manaArray = manaCost.split("");
         manaArray.join();
-
-        console.log(manaArray);
-        //console.log(manaArray[0]);
-        //console.log(manaArray[1]);
-        //console.log(manaArray[2]);
-        //console.log("---");
-        //console.log(manaArray.length);
+        //console.log(manaArray):
 
         let i = 0;
         let l = 0;
@@ -57,26 +51,55 @@ function searchCard(url, methodType, callback){
             }
             if (manaArray[i] == "}") {
                 console.log(l+" - l iteration");
-                symbolArray[l] = manaArray.slice(arrPos,(i+1));
+                symbolArray[l] = manaArray.slice(arrPos,(i+1)).join("");
                 l+=1;
             }
         }
 
-        //for(let m=0; m<symbolArray.length; m++){
-        //    console.log(symbolArray[m]);
-        //    console.log("---");
-        //}
         console.log(symbolArray);
 
-        //searchCard(searchURL, "GET", function(respJson){
-        //    
-        //});
+        var searchURLMana = "https://api.scryfall.com/symbology";
 
-        
+        searchCard(searchURLMana, "GET", function(respJson){
+            var manaArrayLength = respJson.data.length;
+            console.log(manaArrayLength + "manaArrayLength");
+            var manaSave = [];
+
+            for(let m=0; m<symbolArray.length; m++){
+                for(let r=0; r<manaArrayLength; r++){
+                    if(symbolArray[m]==respJson.data[r].symbol){
+                        console.log(respJson.data[r].symbol);
+                        manaSave[m] = respJson.data[r].svg_uri;
+                    }
+                }
+            }
+            
+            console.log(manaSave);
+
+            
+            const manaSymbolList = document.getElementById("manaCost");
+            while (manaSymbolList.hasChildNodes()) {
+                manaSymbolList.removeChild(manaSymbolList.firstChild);
+            }
+
+
+            for(let n=0;n<manaSave.length;n++){
+                $(document).ready(function() {
+                    var url = manaSave[n];
+                    var manaSymbol = new Image();
+                    manaSymbol.src = url;
+                    manaSymbol.id = "manaSymbol";
+                    $('#manaCost').append(manaSymbol).width(30);
+                });
+            }
+        });
+
+
         document.getElementById("cardName").innerHTML = cardName;
-        document.getElementById("manaCost").innerHTML = manaCost;
+        //document.getElementById("manaCost").innerHTML = manaCost;
         document.getElementById("cardType").innerHTML = cardType;
         document.getElementById("cardImg").src = cardImg;
+
     });
 
    });
