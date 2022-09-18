@@ -7,17 +7,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
-<body>
-    <div id="searchDiv" class="text-bg-primary p-3 container-sm grid text-center rounded">
-        <div class="g-col-8">
+<body class="container-md">
+<!-- Search Input -->
+    <div id="searchDiv" class="text-bg-primary p-3 container-sm col-sm-6 text-center rounded">
+        <div>
             <input type="search" id="userInput" name="cardNameInput" class="form-control-sm">	
             <button class="btn-search btn btn-sm btn-outline-light" id="buttonSearch">Search</button> 
         </div>
     </div>
 
-    <!-- Card Info Section-->
-    <div id="cardDiv" class="container-sm g-col-12">
+<!-- Card Image -->
+    <div id="cardDiv" class="container-sm">
         <div class="card rounded">
             <div class="card__overlay">
             </div>
@@ -30,16 +32,23 @@
         </div>
     </div>
 
-    <div class="container grid text-center rounded bg-light bg-gradient" id="mainInfo">
-        <div>
-            <p class="display-6" id="cardName"></p>
-            <ul class="container list-group list-group-horizontal translate-middle" id="manaCost">
-            </ul>
-            <p id="cardType"></p>
+<!-- Card Info -->
+    <div class="container col-sm-6 text-center rounded bg-light bg-gradient" id="mainInfo">
+        <div class="row">
+            <div class="col text-center">
+                <p class="display-6" id="cardName"></p>
+                <ul class="container list-group list-group-horizontal justify-content-center" id="manaCost">
+                </ul>
+                <hr />
+                <p id="cardType"></p>
+                <hr />
+            </div>
         </div>
-        <div>
-            <span class="badge text-bg-success">Legal</span>
-            <span class="badge text-bg-danger">Banned</span>
+        <div class="row">
+            <div class="col">
+                <ul class="container list-group text-nowrap" id="legalList">
+                </ul>
+            </div>
         </div>
     </div>
    
