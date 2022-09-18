@@ -10,9 +10,9 @@ API endpoint retrieval to display data on search query through user input
 - [x] Format leagilites
 
 ## Future Implementations:
-- [ ]
-- [ ]
-- [ ]
+- [ ] .
+- [ ] .
+- [ ] .
 
 -============================-
 - API - [Scryfall API](https://scryfall.com/docs/api)
