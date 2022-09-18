@@ -3,9 +3,19 @@ body {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("../assets/backgroundAssets/3.jpg");
+  background-image: url("/assets/backgroundAssets/3.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+hr {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+li {
+  margin:2px;
 }
 
 /* !Keep Here! */
@@ -85,14 +95,15 @@ body {
 #mainInfo {
   /*margin-left: auto;
   margin-right: auto;*/
-  max-width: 60%;
+  /*max-width: 60%;*/
   filter:drop-shadow(0px 5px 2px #000000);
   padding:10px;
 
 }
 #searchDiv {
   filter:drop-shadow(0px 5px 2px #000000);
-  max-width: 60%;
+  /*max-width: 60%;*/
   margin-top: 15px;
   color: #FFF;
 }
+
