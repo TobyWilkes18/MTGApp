@@ -1,7 +1,9 @@
 # MTGApp
 -============================-
+
 Personal project for a responsive app centered around the trading card game Magic The Gathering
 API endpoint retrieval to display data on search query through user input
+
 -============================-
 
 Returned data includes:
