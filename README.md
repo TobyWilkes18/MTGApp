@@ -8,17 +8,18 @@ API endpoint retrieval to display data on search query through user input
 
 Returned data includes:
 
-| Currently Implemented: |
-- Card Name
-- Card Image
-- Mana Cost (SVG)
-- Format leagilites
-| Future Implementations: |
--
--
--
+##| Currently Implemented: |##
+- [x] Card Name
+- [x] Card Image
+- [x] Mana Cost (SVG)
+- [x] Format leagilites
+
+##| Future Implementations: |##
+- []
+- []
+- []
 
 -============================-
-- API - https://scryfall.com/docs/api
+- API - [Scryfall API](https://scryfall.com/docs/api)
 - Built with HTML / JS|JQuery|Ajax / Bootstrap Framework
 -============================-
