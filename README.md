@@ -19,4 +19,4 @@ API endpoint retrieval to display data on search query through user input
 
 ---
 - API - [Scryfall API](https://scryfall.com/docs/api)
-- Built with HTML / JS|JQuery|Ajax / Bootstrap Framework
+- Built with HTML / JS | JQuery | Ajax / Bootstrap Framework
